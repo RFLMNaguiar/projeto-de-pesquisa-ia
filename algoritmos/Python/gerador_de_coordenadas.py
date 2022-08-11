@@ -9,7 +9,7 @@ if limite_x > numero_de_itens and limite_y > numero_de_itens:
     lista_de_y = random.sample(range(limite_y), numero_de_itens)
     lista_com_coordenadas = []
 
-    arquivo = open("coordenadas.txt", "w")
+    arquivo = open("../coordenadas.txt", "w")
 
     arquivo.write("users1\n\nusers =\n\n")
     for i in range(numero_de_itens):
