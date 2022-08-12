@@ -39,12 +39,18 @@ if 1 <= numero_de_itens <= 25:
     lista_de_y = random.sample(range(1, limite_y, 2), numero_de_itens)
     lista_com_nos = []
 
+    arquivo = open("coordenadas_manhattan.txt", "w")
+
     for i in range(numero_de_itens):
         direcao = random.randrange(0, 4)
         lista_com_nos.append(No(lista_de_x[i], lista_de_y[i], direcao))
 
-    print("Posições iniciais:")
+    # Posições iniciais:
+    arquivo.write("users1\n\nusers =\n\n")
+    for i in range(numero_de_itens):
+        arquivo.write(f"    {lista_de_x[i]}    {lista_de_y[i]}\n")
 
+    print("Posições iniciais:")
     imprimir_lista_de_nos()
 
     print("Movimentações:")

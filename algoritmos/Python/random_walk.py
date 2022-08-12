@@ -11,8 +11,15 @@ if limite_x > numero_de_itens and limite_y > numero_de_itens:
     lista_de_y = random.sample(range(limite_y), numero_de_itens)
     lista_com_coordenadas = []
 
+    arquivo = open("coordenadas_random.txt", "w")
+
     for i in range(numero_de_itens):
         lista_com_coordenadas.append([lista_de_x[i], lista_de_y[i]])
+
+    # Posições iniciais:
+    arquivo.write("users1\n\nusers =\n\n")
+    for i in range(numero_de_itens):
+        arquivo.write(f"    {lista_de_x[i]}    {lista_de_y[i]}\n")
 
     print("Posições iniciais:")
     print(lista_com_coordenadas)
@@ -39,6 +46,6 @@ if limite_x > numero_de_itens and limite_y > numero_de_itens:
                     lista_com_coordenadas[i][1] -= velocidade
 
         print(lista_com_coordenadas)
-
+    arquivo.close()
 else:
     print("O número de itens não pode ser maior que as dimensões de x e/ou y!")
